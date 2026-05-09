@@ -1,7 +1,3 @@
-/* ===== أسلوب الصفحات المتتالي - CSS ===== */
-/* ملف التنسيق الخارجي للموقع */
-
-/* متغيرات الألوان الأساسية */
 :root {
     --primary-color: #1a3c6e;
     --secondary-color: #e8a020;
@@ -13,7 +9,6 @@
     --border-color: #dee2e6;
 }
 
-/* ===== تنسيق عام للجسم ===== */
 body {
     font-family: 'Cairo', sans-serif;
     background-color: var(--bg-light);
@@ -22,18 +17,18 @@ body {
     padding: 0;
 }
 
-/* ===== الرأس والتنقل ===== */
-.navbar-brand {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--secondary-color) !important;
-    letter-spacing: 1px;
-}
 
 .navbar {
     background-color: var(--primary-color) !important;
     box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     padding: 12px 0;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--secondary-color) !important;
+    letter-spacing: 1px;
 }
 
 .nav-link {
@@ -45,12 +40,20 @@ body {
     padding: 6px 12px !important;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover, 
+.nav-link.active {
     color: var(--secondary-color) !important;
     background-color: rgba(255,255,255,0.1);
 }
 
-/* ===== السلايدر ===== */
+.nav-link i {
+    font-size: 1.1rem;      
+    vertical-align: middle;  
+    margin-bottom: 3px;     
+    display: inline-block;
+}
+
+
 .carousel-item {
     height: 420px;
     background-color: var(--primary-color);
@@ -58,7 +61,6 @@ body {
     overflow: hidden;
 }
 
-/* الخلفيات الملونة بدلاً من الصور */
 .carousel-item:nth-child(1) { background: linear-gradient(135deg, #1a3c6e 60%, #e8a020); }
 .carousel-item:nth-child(2) { background: linear-gradient(135deg, #c0392b 60%, #1a3c6e); }
 .carousel-item:nth-child(3) { background: linear-gradient(135deg, #27ae60 60%, #1a3c6e); }
@@ -76,6 +78,7 @@ body {
     border-radius: 12px;
     padding: 20px 30px;
     bottom: 40px;
+    z-index: 5;
 }
 
 .carousel-caption h3 {
@@ -89,7 +92,17 @@ body {
     margin-bottom: 10px;
 }
 
-/* ===== أقسام الصفحة الرئيسية ===== */
+.carousel-control-prev, 
+.carousel-control-next {
+    width: 8%;
+}
+
+.carousel-caption .btn {
+    position: relative;
+    pointer-events: auto;
+}
+
+
 .section-title {
     font-size: 1.7rem;
     font-weight: 700;
@@ -99,33 +112,37 @@ body {
     margin-bottom: 25px;
 }
 
-/* ===== البطاقات Cards ===== */
+.filter-bar {
+    background: var(--bg-white);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
+}
+
 .event-card {
     border: none;
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 3px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
     background: var(--bg-white);
 }
 
 .event-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
-/* رأس البطاقة بالألوان بدلاً من الصور */
 .card-img-top-colored {
     height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 60px;
-}
-
-.card-body {
-    padding: 18px;
+    background-size: cover;
+    background-position: center;
 }
 
 .card-title {
@@ -141,7 +158,6 @@ body {
     line-height: 1.6;
 }
 
-/* ===== الشارات Badges ===== */
 .badge-category {
     display: inline-block;
     padding: 4px 12px;
@@ -159,57 +175,7 @@ body {
     transform: scale(1.05);
 }
 
-/* ===== التذييل Footer ===== */
-footer {
-    background-color: var(--primary-color) !important;
-    color: #ccc;
-    padding: 40px 0 20px;
-    margin-top: 60px;
-}
 
-footer h5 {
-    color: var(--secondary-color);
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-footer a {
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.2s;
-    display: block;
-    margin-bottom: 6px;
-}
-
-footer a:hover {
-    color: var(--secondary-color);
-}
-
-footer .social-links a {
-    display: inline-block;
-    margin-left: 10px;
-}
-
-footer hr {
-    border-color: rgba(255,255,255,0.15);
-    margin: 20px 0;
-}
-
-footer .copyright {
-    color: #aaa;
-    font-size: 0.88rem;
-}
-
-/* ===== شريط الفلترة ===== */
-.filter-bar {
-    background: var(--bg-white);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
-    margin-bottom: 30px;
-}
-
-/* ===== صفحة التفاصيل ===== */
 .event-detail-header {
     background: linear-gradient(135deg, var(--primary-color), #2d6aa0);
     color: white;
@@ -221,6 +187,16 @@ footer .copyright {
     font-size: 2.2rem;
     font-weight: 700;
     color: var(--secondary-color);
+}
+
+#event-image {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
 .event-info-box {
@@ -239,35 +215,30 @@ footer .copyright {
     margin-bottom: 15px;
 }
 
-/* الخريطة الوهمية */
-.fake-map {
-    background: linear-gradient(135deg, #e8f4f8, #cde8f0);
-    border-radius: 12px;
-    height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 50px;
-    border: 2px solid #b0d4e0;
-}
-
-/* معرض الصور */
 .gallery-item {
-    height: 120px;
+    width: 100%;
+    height: 150px;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 40px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease;
     cursor: pointer;
-    transition: transform 0.2s;
 }
 
 .gallery-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-/* ===== صفحة عن الدليل ===== */
+.timer-unit {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 8px;
+    min-width: 55px;
+}
+
+
 .about-hero {
     background: linear-gradient(135deg, var(--primary-color), #2d6aa0);
     color: white;
@@ -312,7 +283,7 @@ footer .copyright {
     margin-bottom: 5px;
 }
 
-/* ===== صفحة اتصل بنا ===== */
+
 .contact-hero {
     background: linear-gradient(135deg, var(--primary-color), #2d6aa0);
     color: white;
@@ -361,7 +332,7 @@ footer .copyright {
     color: var(--secondary-color);
 }
 
-/* ===== النماذج Forms ===== */
+
 .form-control, .form-select {
     border-radius: 8px;
     border: 1.5px solid var(--border-color);
@@ -370,12 +341,12 @@ footer .copyright {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus, 
+.form-select:focus {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(26,60,110,0.15);
 }
 
-/* ===== الأزرار ===== */
 .btn-primary-custom {
     background-color: var(--primary-color);
     color: white;
@@ -409,69 +380,79 @@ footer .copyright {
     background-color: #c8870a;
 }
 
-/* ===== التجاوب مع الشاشات - Responsive ===== */
+
+footer {
+    background-color: var(--primary-color) !important;
+    color: #ccc;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+footer h5 {
+    color: var(--secondary-color);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+    margin-bottom: 6px;
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+
+footer hr {
+    border-color: rgba(255,255,255,0.15);
+    margin: 20px 0;
+}
+
+footer .copyright {
+    color: #aaa;
+    font-size: 0.88rem;
+}
+
+
 @media (max-width: 768px) {
-    .carousel-item {
-        height: 280px;
-    }
-    .carousel-icon {
-        font-size: 70px;
-    }
-    .carousel-caption h3 {
-        font-size: 1.2rem;
-    }
-    .section-title {
-        font-size: 1.3rem;
-    }
-    .event-detail-header h1 {
-        font-size: 1.5rem;
-    }
-    .about-hero h1, .contact-hero h1 {
-        font-size: 1.6rem;
-    }
-    .contact-info-box {
-        margin-top: 25px;
-    }
+    .carousel-item { height: 280px; }
+    .carousel-icon { font-size: 70px; }
+    .carousel-caption h3 { font-size: 1.2rem; }
+    .section-title { font-size: 1.3rem; }
+    .event-detail-header h1 { font-size: 1.5rem; }
+    .about-hero h1, .contact-hero h1 { font-size: 1.6rem; }
+    .contact-info-box { margin-top: 25px; }
 }
 
 @media (max-width: 576px) {
-    .carousel-item {
-        height: 220px;
-    }
-    .carousel-caption {
-        padding: 10px 15px;
-        bottom: 15px;
-    }
+    .carousel-item { height: 220px; }
+    .carousel-caption { padding: 10px 15px; bottom: 15px; }
 }
 
-/* تخصيصات للوضع المظلم فقط */
-[data-bs-theme="dark"] {
-    --bs-body-bg: #121212; /* لون خلفية داكن جداً */
-    --bs-body-color: #e0e0e0; /* لون نص فاتح */
-}
-
-[data-bs-theme="dark"] .card {
-    background-color: #1e1e1e;
-    border-color: #333;
-}
-
-[data-bs-theme="dark"] .navbar {
-    background-color: #000 !important;
-}
-
-/* ========================================= */
-/* تخصيصات الوضع المظلم (Dark Mode) */
-/* ========================================= */
 
 [data-bs-theme="dark"] {
-    /* 1. نغير قيمة المتغيرات الأساسية لتصبح داكنة */
-    --bg-light: #121212 !important;      /* خلفية الموقع بالكامل */
-    --bg-white: #1e1e2d !important;      /* خلفية البطاقات والصناديق بدلاً من الأبيض */
-    --text-dark: #e0e0e0 !important;     /* لون النصوص العادية */
-    --border-color: #333333 !important;  /* لون الحدود */
+    --bs-body-bg: #121212;
+    --bs-body-color: #e0e0e0;
+    --bg-light: #121212 !important;
+    --bg-white: #1e1e2d !important;
+    --text-dark: #e0e0e0 !important;
+    --border-color: #333333 !important;
 }
 
-/* 2. إصلاح النصوص والعناوين الملونة يدوياً في الـ HTML لتصبح فاتحة */
+[data-bs-theme="dark"] .card, 
+[data-bs-theme="dark"] .event-card {
+    background-color: #1e1e2d;
+    border: 1px solid #333;
+}
+
+[data-bs-theme="dark"] .navbar,
+[data-bs-theme="dark"] #countdown-section {
+    background-color: #0a192f !important;
+}
+
 [data-bs-theme="dark"] h1, 
 [data-bs-theme="dark"] h2, 
 [data-bs-theme="dark"] h3, 
@@ -483,21 +464,15 @@ footer .copyright {
     color: #f8f9fa !important;
 }
 
-/* 3. إصلاح النصوص الرمادية */
 [data-bs-theme="dark"] p,
 [data-bs-theme="dark"] .text-muted {
     color: #a0aab5 !important;
 }
 
-/* 4. إعطاء شريط التنقل (Navbar) لون داكن جداً ليفصل عن الخلفية */
-[data-bs-theme="dark"] .navbar {
-    background-color: #0a192f !important;
-}
-
-/* 5. تفتيح روابط شريط التنقل */
 [data-bs-theme="dark"] .nav-link {
     color: #e0e0e0 !important;
 }
+
 [data-bs-theme="dark"] .nav-link:hover, 
 [data-bs-theme="dark"] .nav-link.active {
     color: var(--secondary-color) !important;
