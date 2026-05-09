@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,42 +10,51 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
 </head>
 
 <body>
+
+
 <header>
-    <nav class="navbar navbar-expand-lg"<li class="nav-item ms-lg-3">
-        <button class="btn btn-sm btn-outline-secondary" id="themeToggler">
-            <i class="bi bi-moon-fill" id="themeIcon"></i> </button>
-    </li>
+    <nav class="navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="index.html"> دليل فعاليات الجامعة الأفتراضية السورية</a>
-            <button class="navbar-toggler" type="button"
-                    data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            
+            <button class="btn btn-sm btn-outline-secondary ms-auto me-2" id="themeToggler">
+                <i class="bi bi-moon-fill" id="themeIcon"></i> 
+            </button>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html"> الرئيسية</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="events.html"> كل الفعاليات</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html"> عن الدليل</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html"> اتصل بنا</a></li>
+                    <a class="nav-link" href="index.html"><i class="bi bi-house-door-fill me-1"></i> الرئيسية</a>
+                    <a class="nav-link" href="events.html"><i class="bi bi-calendar-event-fill me-1"></i> كل الفعاليات</a>
+                    <a class="nav-link" href="about.html"><i class="bi bi-info-circle-fill me-1"></i> عن الدليل</a>
+                    <a class="nav-link" href="contact.html"><i class="bi bi-envelope-fill me-1"></i> اتصل بنا</a>
+
                 </ul>
             </div>
         </div>
     </nav>
 </header>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 <main class="container my-5">
+
     <h2 class="section-title"> كل الفعاليات</h2>
+
+    
     <div class="filter-bar">
         <div class="row g-3 align-items-end">
+            
             <div class="col-md-4">
-                <label class="form-label fw-bold"> موقع الفعالية  </label>
-                <input type="text" id="search Input" class="form-control"
-                       placeholder="اكتب اسم الفعالية...">
+                <label class="form-label fw-bold"> اسم الفعالية  </label>
+                <input type="text" id="searchInput" class="form-control" placeholder="اكتب اسم الفعالية..." oninput="filterEvents()">
             </div>
+            
             <div class="col-md-3">
                 <label class="form-label fw-bold"> التصنيف</label>
                 <select id="categoryFilter" class="form-select" onchange="filterEvents()">
@@ -57,151 +67,167 @@
                     <option value="science"> علمي</option>
                 </select>
             </div>
+            
             <div class="col-md-3">
                 <label class="form-label fw-bold"> التاريخ</label>
                 <input type="date" id="dateFilter" class="form-control" onchange="filterEvents()">
             </div>
+            
             <div class="col-md-2">
-                <button onclick="filterEvents()" class="btn btn-primary-custom w-100 mb-1">فلترة</button>
-                <button onclick="resetFilter()" class="btn btn-secondary-custom w-100">إعادة</button>
+                <button onclick="resetFilter()" class="btn btn-secondary-custom w-100">إعادة تعيين</button>
             </div>
         </div>
     </div>
 
+    
     <div class="row g-4" id="eventsGrid">
+
+        
         <div class="col-lg-4 col-md-6 event-card-wrapper" data-category="culture" data-date="2026-05-15">
             <div class="event-card card h-100">
                 <div class="card-img-top-colored" style="background: url('assets/img/forlan.png') center/cover no-repeat;"></div>
                 <div class="card-body d-flex flex-column">
                     <span class="badge mb-2" style="background:#2ecc71; width:fit-content;">ثقافة</span>
                     <h5 class="card-title">مهرجان الفنون الجامعي 2026</h5>
-                    <p class="card-text mb-1"><strong></strong> 2026/05/15</p>
-                    <p class="card-text mb-1"><strong></strong> دمشق - قاعة الاحتفالات</p>
+                    <p class="card-text mb-1"> 2026/05/15</p>
+                    <p class="card-text mb-1"> دمشق - قاعة الاحتفالات</p>
                     <p class="card-text flex-grow-1">احتفالية سنوية تجمع طلاب الجامعة لعرض مواهبهم الفنية والإبداعية</p>
-                    <a href="event.html" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
+                    <a href="event.html?id=1" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
                 </div>
             </div>
         </div>
 
+        
         <div class="col-lg-4 col-md-6 event-card-wrapper" data-category="sports" data-date="2026-05-20">
             <div class="event-card card h-100">
                 <div class="card-img-top-colored" style="background: url('assets/img/football.png') center/cover no-repeat;"></div>
                 <div class="card-body d-flex flex-column">
                     <span class="badge mb-2" style="background:#e74c3c; width:fit-content;">رياضة</span>
                     <h5 class="card-title">بطولة كرة القدم بين الأقسام</h5>
-                    <p class="card-text mb-1"><strong></strong> 2026/05/20</p>
-                    <p class="card-text mb-1"><strong></strong> ملعب الجامعة</p>
+                    <p class="card-text mb-1"> 2026/05/20</p>
+                    <p class="card-text mb-1"> ملعب الجامعة</p>
                     <p class="card-text flex-grow-1">منافسات رياضية ممتعة بين أقسام الجامعة في كرة القدم</p>
-                    <a href="event.html" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
+                    <a href="event.html?id=2" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
                 </div>
             </div>
         </div>
 
+        
         <div class="col-lg-4 col-md-6 event-card-wrapper" data-category="music" data-date="2026-05-25">
             <div class="event-card card h-100">
                 <div class="card-img-top-colored" style="background: url('assets/img/music.png') center/cover no-repeat;"></div>
                 <div class="card-body d-flex flex-column">
                     <span class="badge mb-2" style="background:#9b59b6; width:fit-content;">موسيقى</span>
                     <h5 class="card-title">حفل الموسيقى الكلاسيكية</h5>
-                    <p class="card-text mb-1"><strong></strong> 2026/05/25</p>
-                    <p class="card-text mb-1"><strong></strong> دار الأوبرا </p>
-                    <p class="card-text flex-grow-1">أمسية موسيقية راقية يقدمها طلاب  </p>
-                    <a href="event.html" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
+                    <p class="card-text mb-1"> 2026/05/25</p>
+                    <p class="card-text mb-1"> دار الأوبرا </p>
+                    <p class="card-text flex-grow-1"> أمسية موسيقية راقية يقدمها طلاب الجامعة </p>
+                    <a href="event.html?id=3" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
                 </div>
             </div>
         </div>
 
+        
         <div class="col-lg-4 col-md-6 event-card-wrapper" data-category="tech" data-date="2026-06-01">
             <div class="event-card card h-100">
                 <div class="card-img-top-colored" style="background: url('assets/img/programming.png') center/cover no-repeat;"></div>
                 <div class="card-body d-flex flex-column">
                     <span class="badge mb-2" style="background:#3498db; width:fit-content;">تقني</span>
                     <h5 class="card-title">  المسابقة البرمجية التنافسية</h5>
-                    <p class="card-text mb-1"><strong></strong> 2026/06/01</p>
-                    <p class="card-text mb-1"><strong></strong>  CodeForces افتراضي عبر الإنترنت</p>
+                    <p class="card-text mb-1"> 2026/06/01</p>
+                    <p class="card-text mb-1">  CodeForces افتراضي عبر الإنترنت</p>
                     <p class="card-text flex-grow-1">مسابقة برمجية تجمع أفضل المبرمجين من طلاب الجامعة تطلب حل مشكلات خوارزمية ورياضية </p>
-                    <a href="event.html" class="btn btn-primary-custom mt-3 text-center">📄 التفاصيل</a>
+                    <a href="event.html?id=4" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
                 </div>
             </div>
         </div>
 
+        
         <div class="col-lg-4 col-md-6 event-card-wrapper" data-category="family" data-date="2026-06-10">
             <div class="event-card card h-100">
                 <div class="card-img-top-colored" style="background: url('assets/img/family.png') center/cover no-repeat;"></div>
                 <div class="card-body d-flex flex-column">
                     <span class="badge mb-2" style="background:#f39c12; width:fit-content;">عائلي</span>
                     <h5 class="card-title">يوم الأسرة الجامعية</h5>
-                    <p class="card-text mb-1"><strong></strong> 2026/06/10</p>
-                    <p class="card-text mb-1"><strong></strong> الحديقة المركزية</p>
+                    <p class="card-text mb-1"> 2026/06/10</p>
+                    <p class="card-text mb-1"> الحديقة المركزية</p>
                     <p class="card-text flex-grow-1">يوم ترفيهي مميز تجمع فيه أسر منسوبي الجامعة للتعارف والمرح</p>
-                     <a href="event.html" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
+                     <a href="event.html?id=5" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
                 </div>
             </div>
         </div>
 
+        
         <div class="col-lg-4 col-md-6 event-card-wrapper" data-category="science" data-date="2026-06-15">
             <div class="event-card card h-100">
                 <div class="card-img-top-colored" style="background:url('assets/img/ai.png') center/cover no-repeat;"></div>
                 <div class="card-body d-flex flex-column">
                     <span class="badge mb-2" style="background:#1abc9c; width:fit-content;">علمي</span>
-                   
-                    <h5 class="card-title">ندوة الذكاء الاصطناعي</h5>
-                    <p class="card-text mb-1"><strong></strong> 2026/06/15</p>
-                    <p class="card-text mb-1"><strong></strong> افتراضي عبر Zoom</p>
+                    
+                    <h5 class="card-title">مؤتمر الذكاء الاصطناعي</h5>
+                    <p class="card-text mb-1"> 2026/06/15</p>
+                    <p class="card-text mb-1"> افتراضي عبر Zoom</p>
                     <p class="card-text flex-grow-1">ندوة علمية تناقش أحدث تطورات الذكاء الاصطناعي وتطبيقاته</p>
-                    <a href="event.html" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
+                    <a href="event.html?id=6" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
                 </div>
             </div>
         </div>
 
+        
         <div class="col-lg-4 col-md-6 event-card-wrapper" data-category="culture" data-date="2026-06-20">
             <div class="event-card card h-100">
                 <div class="card-img-top-colored" style="background:url('assets/img/book.png') center/cover no-repeat;"></div>
                 <div class="card-body d-flex flex-column">
-                    <span class="badge mb-2" style="background:#e67e22; width:fit-content;">ثقافة</span>
+                    <span class="badge mb-2" style="background:#2ecc71; width:fit-content;">ثقافة</span>
                     <h5 class="card-title">معرض الكتاب الجامعي</h5>
-                    <p class="card-text mb-1"><strong></strong> 2026/06/20</p>
-                    <p class="card-text mb-1"><strong></strong> المكتبة المركزية</p>
+                    <p class="card-text mb-1"> 2026/06/20</p>
+                    <p class="card-text mb-1">المكتبة المركزية</p>
                     <p class="card-text flex-grow-1">معرض سنوي للكتب العلمية والأدبية بمشاركة دور النشر العربية والأجنبية</p>
-                    <a href="event.html" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
+                    <a href="event.html?id=7" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
                 </div>
             </div>
         </div>
 
+        
         <div class="col-lg-4 col-md-6 event-card-wrapper" data-category="sports" data-date="2026-06-25">
             <div class="event-card card h-100">
                 <div class="card-img-top-colored" style="background:url('assets/img/swim.png') center/cover no-repeat;"></div>
                 <div class="card-body d-flex flex-column">
                     <span class="badge mb-2" style="background:#c0392b; width:fit-content;">رياضة</span>
                     <h5 class="card-title">بطولة السباحة الجامعية</h5>
-                    <p class="card-text mb-1"><strong></strong> 2026/06/25</p>
-                    <p class="card-text mb-1"><strong></strong> حمام السباحة</p>
+                    <p class="card-text mb-1"> 2026/06/25</p>
+                    <p class="card-text mb-1"> حمام السباحة</p>
                     <p class="card-text flex-grow-1">منافسات سباحة بين طلاب الجامعة في عدة مسافات وأساليب</p>
-                    <a href="event.html" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
+                    <a href="event.html?id=8" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
                 </div>
             </div>
         </div>
 
+        
         <div class="col-lg-4 col-md-6 event-card-wrapper" data-category="tech" data-date="2026-07-01">
             <div class="event-card card h-100">
                 <div class="card-img-top-colored" style="background:url('assets/img/mobil.png') center/cover no-repeat;"></div>
                 <div class="card-body d-flex flex-column">
                     <span class="badge mb-2" style="background:#2980b9; width:fit-content;">تقني</span>
                     <h5 class="card-title">ورشة تطوير تطبيقات الجوال</h5>
-                    <p class="card-text mb-1"><strong></strong> 2026/07/01</p>
-                    <p class="card-text mb-1"><strong></strong> مختبر الحاسوب</p>
+                    <p class="card-text mb-1"> 2026/07/01</p>
+                    <p class="card-text mb-1"> مختبر الحاسوب</p>
                     <p class="card-text flex-grow-1">ورشة عمل تعليمية لتطوير تطبيقات الهاتف الذكي باستخدام أحدث التقنيات</p>
-                    <a href="event.html" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
+                    <a href="event.html?id=9" class="btn btn-primary-custom mt-3 text-center"> التفاصيل</a>
                 </div>
             </div>
         </div>
+
     </div>
 
 </main>
+
+
 <button id="scrollTopBtn" onclick="scrollToTop()"
         style="display:none; position:fixed; bottom:30px; left:30px; z-index:999; background:#1a3c6e; color:white; border:none; border-radius:50%; width:45px; height:45px; font-size:20px; cursor:pointer; box-shadow:0 3px 10px rgba(0,0,0,0.3);">
     ↑
 </button>
+
 
 <footer>
     <div class="container">
@@ -230,6 +256,7 @@
         <hr>
          <p class="text-center copyright"> دليل فعاليات الجامعة الافتراضية السورية   </p>
                 <p class="text-center copyright"> © 2026 جميع الحقوق محفوظة</p>
+
     </div>
 </footer>
 
